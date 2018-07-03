@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>about</title>
-</head>
-<body>
- <h1>About</h1><h2>us</h2>
- {{$param2}} 
-<?= isset($para1)?$para1 :'' ; ?> <br>
-<?= isset($param2)?print_r($param2) :'' ; ?>
-</body>
-</html>
+@extends('directory/layout')
+@section('content')
+
+      
+      <?php
+         echo Form::open(array('url' => 'foo/bar'));
+            echo Form::text('username','Username');
+            echo '<br/>';
+            
+            echo Form::text('email', 'example@gmail.com');
+            echo '<br/>';
+     
+            echo Form::password('password');
+            echo '<br/>';
+            
+            echo Form::checkbox('name', 'value');
+            echo '<br/>';
+            
+            echo Form::radio('name', 'value');
+            echo '<br/>';
+            
+            echo Form::file('image');
+            echo '<br/>';
+            
+            echo Form::select('size', array('L' => 'Large', 'S' => 'Small'));
+            echo '<br/>';
+            
+            echo Form::submit('Click Me!');
+         echo Form::close();
+      ?>
+
+@endsection
+

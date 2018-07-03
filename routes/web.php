@@ -33,3 +33,4 @@ Route::get('/contact/{id}', function ($id) {
 Route::get('/con','taskcontroller@index');
 Route::get('/con/{tasks}','taskcontroller@show');
 Route::get('/post','PostController@post');
+Route::post('/signup','PostController@signup');

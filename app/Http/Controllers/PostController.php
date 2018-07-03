@@ -10,4 +10,8 @@ class PostController extends Controller
     {
    		return view('posts.index');
 	}	
+	public function signup()
+	{
+		return view('posts.here');
+	}
 }
