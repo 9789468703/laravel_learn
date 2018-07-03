@@ -17,9 +17,9 @@ Route::get('/about', function () {
     return view('about',$paramet);
 });
 Route::get('/contact', function () {
-	$param2= DB::table('tasks')->get();
-	return $param2;
-	// return view('about',$param2);
+	$param2= DB::table('posts')->get();
+	// return $param2;
+	return view('posts.showall',$param2);
 });
 Route::get('/contact/{id}', function ($id) {
 	$param2= DB::table('tasks')->find($id);
@@ -34,3 +34,7 @@ Route::get('/con','taskcontroller@index');
 Route::get('/con/{tasks}','taskcontroller@show');
 Route::get('/post','PostController@post');
 Route::post('/signup','PostController@signup');
+Route::get('/showall','PostController@showallcontroll');
+
+
+?>

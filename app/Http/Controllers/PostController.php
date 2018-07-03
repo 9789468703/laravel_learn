@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 use DB;
 use Illuminate\Http\Request;
+use App;	
+use App\Post;
+
 
 class PostController extends Controller
 {
+	public function __construct()
+	{
+		
+	}
+
         public function post()
     {
    		return view('posts.index');
@@ -16,11 +24,12 @@ class PostController extends Controller
 		DB::table('posts')->insert($data);
    		return view('posts.index');
 	}
-	public function showall()
+	public function showallcontroll()
 	{
-		$users = DB::table('posts')->distinct()->get();
-		var_dump($users);
-
-		// return view('posts.showall',['users'=>DB::table('posts')->distinct()->get()]);
+		// $post=new \App\post;
+	
+		$entireTable = App\Post::all();
+	echo "<pre>";
+		var_dump($entireTable);
 	}
 }
