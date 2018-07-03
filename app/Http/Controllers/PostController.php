@@ -26,10 +26,18 @@ class PostController extends Controller
 	}
 	public function showallcontroll()
 	{
-		// $post=new \App\post;
+		// $post= new \App\post;//WORKING 1
+
+		$post= new post;
 	
-		$entireTable = App\Post::all();
-	echo "<pre>";
-		var_dump($entireTable);
+		// $entireTable = App\Post::all(); // working 1
+
+		// $entireTable = App\Post::selectall();
+	$entireTable=$post->selectall();
+	// echo "<pre>";
+	// 	var_dump($entireTable);
+
+		// print_r($entireTable);
+	return view('posts.showall')->with(['data'=>$entireTable]);
 	}
 }

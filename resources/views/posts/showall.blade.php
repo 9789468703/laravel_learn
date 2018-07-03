@@ -1,6 +1,3 @@
 <?php
-
-
-@foreach($users as $data)
-   {{ $data->email }}
-@endforeach
+echo "<pre>";
+print_r($data);
