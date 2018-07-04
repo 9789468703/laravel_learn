@@ -17,6 +17,9 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('password');
+            $table->string('email');
+            $table->text('address');
+            $table->string('phone');
             $table->timestamps();
         });
     }

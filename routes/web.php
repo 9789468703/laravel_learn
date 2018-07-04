@@ -35,6 +35,7 @@ Route::get('/con/{tasks}','taskcontroller@show');
 Route::get('/post','PostController@post');
 Route::post('/signup','PostController@signup');
 Route::get('/showall','PostController@showallcontroll');
+Route::get('/deleteid','PostController@deleteid');
 
 
 ?>

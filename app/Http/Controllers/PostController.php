@@ -20,9 +20,17 @@ class PostController extends Controller
 	}	
 	public function signup(Request $request)
 	{
-		$data = array('username' => $request->input('email') , 'password'=> $request->input('password') );
-		DB::table('posts')->insert($data);
-   		return view('posts.index');
+		$data = array(
+			'username' => $request->input('username') ,
+			'password'=> $request->input('password') ,
+			'email' => $request->input('email') ,
+			'address' => $request->input('address') , 
+			'phone' => $request->input('phone')
+		);
+		DB::table('posts')->insert($data);	
+   		$post= new post;
+		$entireTable=$post->selectall();
+   			return view('posts.showall')->with(['datas'=>$entireTable]);
 	}
 	public function showallcontroll()
 	{
@@ -38,6 +46,18 @@ class PostController extends Controller
 	// 	var_dump($entireTable);
 
 		// print_r($entireTable);
-	return view('posts.showall')->with(['data'=>$entireTable]);
+	return view('posts.showall')->with(['datas'=>$entireTable]);
+	}
+	public function deleteid(Request $request)
+	{
+		$deleteid=$request->input('deleteid');
+		DB::table('posts')->where('id', '=', $deleteid)->delete();
+		$post= new post;
+		$entireTable=$post->selectall();
+   			return view('posts.showall')->with(['datas'=>$entireTable]);
+	}
+	public function update()
+	{
+		
 	}
 }
