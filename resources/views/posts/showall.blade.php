@@ -401,7 +401,7 @@ $( ".edit" ).on('click', function(e){
 	<div id="addEmployeeModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
-        <?php echo Form::open(array('url' => 'signup')); ?>
+        <?php echo Form::open(array('url' => 'showall')); ?>
           {{ csrf_field() }}
 					<div class="modal-header">						
 						<h4 class="modal-title">Add Employee</h4>

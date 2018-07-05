@@ -28,10 +28,12 @@ class PostController extends Controller
 			'phone' => $request->input('phone')
 		);
 		DB::table('posts')->insert($data);	
-   		$post= new post;
-		$entireTable=$post->selectall();
-   			return view('posts.showall')->with(['datas'=>$entireTable]);
-	}
+   		// $post= new post;
+		// $entireTable=$post->selectall();
+   			// return view('posts.showall')->with(['datas'=>$entireTable]);
+		//	return $this->showallcontroll();
+		return redirect()->to('showall');
+			}
 	public function showallcontroll()
 	{
 		// $post= new \App\post;//WORKING 1
@@ -65,8 +67,7 @@ class PostController extends Controller
 			'phone' => $request->input('editphone')
 		);
 		DB::table('posts')->where('id',$editid)->update($data);
-	$post= new post;
-	$entireTable=$post->selectall();
-	return view('posts.showall')->with(['datas'=>$entireTable]);				
+				return redirect()->to('showall');
+		
 	}
 }

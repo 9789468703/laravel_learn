@@ -33,7 +33,7 @@ Route::get('/contact/{id}', function ($id) {
 Route::get('/con','taskcontroller@index');
 Route::get('/con/{tasks}','taskcontroller@show');
 Route::get('/post','PostController@post');
-Route::post('/signup','PostController@signup');
+Route::post('/showall','PostController@signup');
 Route::get('/showall','PostController@showallcontroll');
 Route::get('/deleteid','PostController@deleteid');
 Route::post('/update','PostController@update');
