@@ -34,9 +34,23 @@ Route::get('/con','taskcontroller@index');
 Route::get('/con/{tasks}','taskcontroller@show');
 Route::get('/post','PostController@post');
 Route::post('/showall','PostController@signup');
+Route::post('/login','PostController@login');
 Route::get('/showall','PostController@showallcontroll');
 Route::get('/deleteid','PostController@deleteid');
+Route::get('/login',function(){
+	return view('posts.login');
+});
 Route::post('/update','PostController@update');
-
-
+Route::get('/loginauth',function(){
+	return view('auth.login');
+});
+Auth::routes();
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('admin_area', ['middleware' => 'admin', function () {
+    return view('showall');
+    }]);
 ?>
+<!-- Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+ -->

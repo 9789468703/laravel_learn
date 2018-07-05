@@ -22,7 +22,7 @@ class PostController extends Controller
 	{
 		$data = array(
 			'username' => $request->input('username') ,
-			'password'=> $request->input('password') ,
+			'password'=> md5($request->input('password') ),
 			'email' => $request->input('email') ,
 			'address' => $request->input('address') , 
 			'phone' => $request->input('phone')
@@ -69,5 +69,12 @@ class PostController extends Controller
 		DB::table('posts')->where('id',$editid)->update($data);
 				return redirect()->to('showall');
 		
+	}
+	public function login(Request $request)
+	{
+		$email=$request->input('email');
+		$password=md5($request->input('password'));
+		$user = DB::table('posts')->where('email', '=', $email )->where('password','=',$password)->get();
+return view('posts.here')->with(['datas'=>$user]);
 	}
 }

@@ -2,7 +2,6 @@
 // echo "<pre>";
 // print_r($datas);
 // echo "</pre>";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -286,7 +285,6 @@ $( ".edit" ).on('click', function(e){
 		$("input[name='editemail']").attr('disabled','true')
 		$("textarea[name='address']").text(editaddress);
 		$("input[name='editphone']").val(editphone);
-
 		});
       $('#bulkdelete').click(function(){
         $('#checkbox1:checked').each(function(i){
@@ -497,4 +495,4 @@ $( ".edit" ).on('click', function(e){
 		</div>
 	</div>
 </body>
-</html>                                		                            
+</html>

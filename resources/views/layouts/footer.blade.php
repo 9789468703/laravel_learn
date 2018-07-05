@@ -1,10 +1,13 @@
 <link rel="stylesheet" type="text/css" href="<?php echo asset('css/bootstrap.min.css'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo asset('css/album.css'); ?>">
+<link rel="stylesheet" type="text/css" href="<?php echo asset('css/jquery.dataTables.min.css'); ?>">
 <script type="text/javascript" src="<?php echo asset('js/jquery.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('js/jquery-3.3.1.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo asset('js/bootstrap.min.js');  ?>"></script>
 <script type="text/javascript" src="<?php echo asset('js/holder.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo asset('js/jquery-3.2.1.slim.min.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo asset('js/popper.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo asset('js/jquery.dataTables.min.js'); ?>"></script>
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
