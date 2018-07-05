@@ -288,6 +288,20 @@ $( ".edit" ).on('click', function(e){
 		$("input[name='editphone']").val(editphone);
 
 		});
+      $('#bulkdelete').click(function(){
+        $('#checkbox1:checked').each(function(i){
+          deleteuser = $(this).val();
+          	$.ajax({
+            url:'deleteid',
+            type: "get",
+            data:{deleteid:deleteuser},
+  			success: function () {
+  				location.reload();
+  			}
+        });
+        });
+        // location.reload();
+      });
 });
 </script>
 </head>
@@ -301,7 +315,7 @@ $( ".edit" ).on('click', function(e){
 					</div>
 					<div class="col-sm-6">
 						<a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New Employee</span></a>
-						<a href="javascript:void(0)" class="btn btn-danger" >
+						<a href="javascript:void(0)" class="btn btn-danger" id="bulkdelete">
 							<i class="material-icons">&#xE15C;</i> <span>Delete</span>
 						</a>						
 					</div>
@@ -336,7 +350,7 @@ $( ".edit" ).on('click', function(e){
                     <tr>
 						<td>
 							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<input type="checkbox" id="checkbox1" name="options[]" value="<?php echo $user->id; ?>">
 								<label for="checkbox1"></label>
 							</span>
 						</td>
@@ -404,7 +418,7 @@ $( ".edit" ).on('click', function(e){
 						</div>
 						<div class="form-group">
 							<label>Email</label>
-							<input type="email" name="email" class="form-control" required disabled="true" >
+							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label>Address</label>

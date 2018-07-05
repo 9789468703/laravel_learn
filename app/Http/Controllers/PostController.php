@@ -56,8 +56,17 @@ class PostController extends Controller
 		$entireTable=$post->selectall();
    			return view('posts.showall')->with(['datas'=>$entireTable]);
 	}
-	public function update()
+	public function update(Request $request)
 	{
-		
+		$editid= $request->input('editid');
+		$data = array(
+			'username' => $request->input('editname') ,
+			'address' => $request->input('address') , 
+			'phone' => $request->input('editphone')
+		);
+		DB::table('posts')->where('id',$editid)->update($data);
+	$post= new post;
+	$entireTable=$post->selectall();
+	return view('posts.showall')->with(['datas'=>$entireTable]);				
 	}
 }
